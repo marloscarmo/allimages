@@ -1,0 +1,40 @@
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span2">
+                    <div class="well sidebar-nav">
+                        <% if (isBack) {%>
+                        <a href="?path=<%= currentPath %>.."><i class="icon-folder-open"></i><strong><%= currentPathName %></strong></a>
+                        <% } else { %>
+                        <i class="icon-folder-open"></i><strong><%= currentPathName %></strong>
+                        <% } %>
+                        <ul>
+                            <% if (isBack) {%>
+                            <li><a href="?path=<%= currentPath %>.."><i class="icon-folder-close"></i>..</a></li>
+                            <% } %>
+                            <% for(var i=0; i<folders.length; i++) {%>
+                            <li><a href="?path=<%= currentPath + folders[i] %>"><i class="icon-folder-close"></i><%= folders[i] %></a></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </div>
+                <div class="span10">
+                    <ul class="thumbnails">
+                    	<% for(var i=0; i<imageFiles.length; i++) {%>
+
+                        <li class="span2">
+                            <div class="thumbnail">
+                                <div class="thumb-image">
+                                    <a href="view?path=<%= currentPathName + imageFiles[i].src %>"><img src="cache/thumb<%= currentPathName + imageFiles[i].name + '.jpg' %>"></a>
+                                </div>
+                                <div class="caption">
+                                    <p><%= imageFiles[i].src %></p>
+                                    <p><a href="#" class="btn btn-mini btn-primary">Download</a><a href="view?path=<%= currentPathName + imageFiles[i].src %>" class="btn btn-mini image-view">Visualizar</a></p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </div>

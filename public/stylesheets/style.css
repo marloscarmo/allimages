@@ -1,0 +1,41 @@
+.thumb-image {
+	height: 120px;
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #EEE;
+}
+
+.navbar-inner {
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	border-radius:0;
+}
+
+.caption {
+	font-size: 10px;
+}
+
+.caption p { 
+	text-align:center; 
+}
+
+.thumbnails .span2 { 
+	margin-right: 10px; margin-left: 0; 
+}
+
+.image-view {
+	margin-left: 6px;
+}
+
+.sidebar-nav ul {
+	margin-left: 18px;
+}
+
+.sidebar-nav li {
+	list-style:none;
+	padding: 0;
+}
+
+.sidebar-nav i { margin-right: 4px; }
+
