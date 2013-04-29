@@ -2,6 +2,9 @@
             <div class="row-fluid">
                 <div class="span2">
                     <div class="well sidebar-nav">
+                        <h4>Folders</h4>
+                        <hr />
+
                         <% if (isBack) {%>
                         <a href="?path=<%= currentPath %>.."><i class="icon-folder-open"></i><strong><%= currentPathName %></strong></a>
                         <% } else { %>
@@ -27,8 +30,8 @@
                                     <a href="view?path=<%= currentPathName + imageFiles[i].src %>"><img src="cache/thumb<%= currentPathName + imageFiles[i].name + '.jpg' %>"></a>
                                 </div>
                                 <div class="caption">
-                                    <p><%= imageFiles[i].src %></p>
-                                    <p><a href="#" class="btn btn-mini btn-primary">Download</a><a href="view?path=<%= currentPathName + imageFiles[i].src %>" class="btn btn-mini image-view">Visualizar</a></p>
+                                    <div class="thumb-title"><%= imageFiles[i].src %></div>
+                                    <p><a href="download?path=<%= currentPathName + imageFiles[i].src %>" class="btn btn-mini btn-primary">Download</a><a href="view?path=<%= currentPathName + imageFiles[i].src %>" class="btn btn-mini image-view">View Image</a></p>
                                 </div>
                             </div>
                         </li>

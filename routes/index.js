@@ -21,7 +21,7 @@ exports.view = function(req, res) {
     var file = req.param('path');
     var path = file.split('/');
     var fileName = path[path.length - 1];
-    var fileExtension = fileName.split('.')
+    var fileExtension = fileName.split('.');
     fileExtension = fileExtension[ fileExtension.length - 1 ];
     path = file.substring(0, file.indexOf(fileName));
     var fileTitle = fileName.substring(0, fileName.indexOf('.' + fileExtension));
@@ -36,17 +36,26 @@ exports.view = function(req, res) {
                     if (err) throw err;
                     res.render('view', {
                         path : path,
-                        name : fileTitle
+                        name : fileTitle,
+                        file : file,
+                        extension : fileExtension
                     });
                 });
             } else {
                 res.render('view', {
                     path : path,
-                    name : fileTitle
+                    name : fileTitle,
+                    file : file,
+                    extension : fileExtension
                 });
             }
         });
     });
+};
+
+exports.download = function(req, res) {
+    var file = req.param('path');
+    res.download($BASEPATH.substring(0, $BASEPATH.length - 1) + file);
 };
 
 var getFolders = function(req, res) {
@@ -104,7 +113,7 @@ var getImagesOfCurrentPath = function(res) {
 
                 fs.exists('public/cache/thumb' + path + fileName + '.jpg', function (exists) {
                     if (!exists) {
-                        im.convert([currentPath + file + '[0]', '-resize', '120x120', 'public/cache/thumb' + path + fileName + '.jpg'],
+                        im.convert([currentPath + file + '[0]', '-resize', '160x160', 'public/cache/thumb' + path + fileName + '.jpg'],
                         function(err, stdout){
                             if (err) throw err;
                             imageFiles.push({
