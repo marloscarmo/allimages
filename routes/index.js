@@ -64,8 +64,8 @@ var getFolders = function(req, res) {
     if (req.param('path') != undefined) {
         currentPath = req.param('path') + '/';
 
-        if (currentPath.substring(0, 6) !== 'public') {
-            res.redirect('/?path=public/files');
+        if (currentPath.substring(0, $BASEPATH.length) !== $BASEPATH) {
+            res.redirect('/?path=' + $BASEPATH.substring(0, $BASEPATH.length - 1));
         }
     }
 

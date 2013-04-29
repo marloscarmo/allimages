@@ -1,11 +1,13 @@
-.thumbnail { display: table; }
 .thumb-image { height: 160px; width: 160px; text-align: center; vertical-align: middle; background-color: #EEE; line-height: 160px; }
 .thumb-title { width: 160px; text-align: center; padding-bottom: 9px; overflow: hidden; height:16px; }
+.navbar { position: fixed; z-index: 99; width: 100%; }
 .navbar-inner { -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; }
+.content { margin-top: 60px; }
 .thumbnail .caption { font-size: 10px; padding: 9px 0 0 0; }
 .caption p { text-align:center; }
 .thumbnails .span2 { margin-right: 10px; margin-left: 0; }
 .image-view { margin-left: 6px; }
+.sidebar-nav { position: fixed; width: 180px; }
 .sidebar-nav h4 { margin: 0; }
 .sidebar-nav hr { margin: 8px 0; }
 .sidebar-nav ul { margin-left: 18px; }
