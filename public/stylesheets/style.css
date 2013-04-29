@@ -2,7 +2,7 @@
 .thumb-title { width: 160px; text-align: center; padding-bottom: 9px; overflow: hidden; height:16px; }
 .navbar { position: fixed; z-index: 99; width: 100%; }
 .navbar-inner { -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; }
-.content { margin-top: 60px; }
+.content { margin-top: 60px; float: left; width: 100%; }
 .thumbnail .caption { font-size: 10px; padding: 9px 0 0 0; }
 .caption p { text-align:center; }
 .thumbnails .span2 { margin-right: 10px; margin-left: 0; }
